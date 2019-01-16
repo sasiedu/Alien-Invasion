@@ -30,3 +30,7 @@ Run the test suite with:
 ```bash
 npm test
 ```
+[Test Documentation](docs/TEST_DOCUMENTATION.md)
+
+### Assumptions
+* Number of cities will always be more than number of aliens.
