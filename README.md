@@ -19,7 +19,7 @@ npm install
 
 ### Run
 Run node game.js and pass map file and number of aliens as parameters.<br />
-Format: ```npm start --map=$PATH_TO_MAP_FILE --aliens=$NUMBER_OF_ALIENS```
+Format: ```npm start -- --map=$PATH_TO_MAP_FILE --aliens=$NUMBER_OF_ALIENS```
 
 ```bash
 npm start ---map=world/map-1 --aliens=5
