@@ -12,7 +12,7 @@ describe('FileUtils.readFile(filePath)', () => {
     });
 
     it('pass non existing file, should return undefined', () => {
-        assert.equal(FileUtils.readFile('no-file'), 'undefined');
+        assert.equal(FileUtils.readFile('no-file'), undefined);
     });
 
     it('pass empty file, should return null', () => {
