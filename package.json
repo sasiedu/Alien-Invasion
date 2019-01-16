@@ -2,11 +2,12 @@
   "name": "alien-invasion",
   "version": "1.0.0",
   "description": "",
-  "main": "game.js",
+  "main": "main.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "start": "node main.js ...",
     "test": "mocha --recursive"
   },
   "repository": {
