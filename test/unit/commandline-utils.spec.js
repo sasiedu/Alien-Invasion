@@ -5,27 +5,27 @@ const CommandlineUtils = require('../../lib/utils/commandline-utils');
 
 describe('CommandlineUtils.parse(cmdArgs[])', () => {
 
-    it('returns empty null if cmdArgs is empty', () => {
+    it('empty array - cmdArgs[]', () => {
         assert.equal(CommandlineUtils.parse([]), null);
     });
 
-    it('returns empty null if cmdArgs length is less than 4', () => {
+    it('array less than 4 - cmdArgs[\'node\', \'game.js\']', () => {
         assert.equal(CommandlineUtils.parse(['node', 'game.js']), null);
     });
 
-    it('returns empty null if required values(--map and --aliens) are not in cmdArrgs', () => {
+    it('without values values(--map and --aliens) - cmdArgs[\'node\', \'game.js\', \'--world=map-1\', \'--count=3\']', () => {
         assert.equal(CommandlineUtils.parse(['node', 'game.js', '--world=map-1', '--count=3']), null);
     });
 
-    it('returns empty null if required values --aliens is not a number', () => {
+    it('when --aliens value is not a number - cmdArgs[\'node\', \'game.js\', \'--map=map-1\', \'--aliens=three\']', () => {
         assert.equal(CommandlineUtils.parse(['node', 'game.js', '--map=map-1', '--aliens=three']), null);
     });
 
-    it('returns empty null if required values --aliens is a number less than 1', () => {
+    it('when --aliens value is less than 1 - cmdArgs[\'node\', \'game.js\', \'--map=map-1\', \'--aliens=0\']', () => {
         assert.equal(CommandlineUtils.parse(['node', 'game.js', '--map=map-1', '--aliens=0']), null);
     });
 
-    it('returns an object { mapPath, alienCount }', () => {
+    it('cmdArgs[\'node\', \'game.js\', \'--map=map-1\', \'--aliens=3\']', () => {
         const obj = CommandlineUtils.parse(['node', 'game.js', '--map=map-1', '--aliens=3']);
         assert.equal(obj.mapPath, 'map-1');
         assert.equal(obj.alienCount, 3);
