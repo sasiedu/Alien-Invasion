@@ -74,3 +74,57 @@ describe('Cities.delete(name)', () => {
         Cities.cities = {};
     });
 });
+
+describe('addAlienToCity(cityName, alienName)', () => {
+    before(() => {
+        Cities.cities = {
+            Foo: { name: 'Foo', north: 'Bar', south: 'Bee', west: '', east: '', alien: '' }
+        };
+    });
+
+    it('pass empty city name, should not throw any error', () => {
+        Cities.addAlienToCity('', 'alien');
+    });
+
+    it('pass non existing city name, should not throw any error', () => {
+        Cities.addAlienToCity('Bar', 'alien');
+    });
+
+    it('pass an empty alien name, should not throw any error', () => {
+        Cities.addAlienToCity('Foo', '');
+    });
+
+    it('pass an existing city name and alien name, Cities.get(cityName).alien should be equal to alien name', () => {
+        Cities.addAlienToCity('Foo', 'alien');
+        assert.equal(Cities.get('Foo').alien, 'alien');
+    });
+
+    after(() => {
+        Cities.cities = {};
+    });
+});
+
+describe('removeAlienFromCity(cityName)', () => {
+    before(() => {
+        Cities.cities = {
+            Foo: { name: 'Foo', north: 'Bar', south: 'Bee', west: '', east: '', alien: 'alien' }
+        };
+    });
+
+    it('pass empty city name, should not throw any error', () => {
+        Cities.removeAlienFromCity('');
+    });
+
+    it('pass non existing city name, should not throw any error', () => {
+        Cities.removeAlienFromCity('Bar');
+    });
+
+    it('pass an existing city name, Cities.get(cityName).alien should be empty', () => {
+        Cities.removeAlienFromCity('Foo');
+        assert.equal(Cities.get('Foo').alien, '');
+    });
+
+    after(() => {
+        Cities.cities = {};
+    });
+});
