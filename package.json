@@ -1,0 +1,25 @@
+{
+  "name": "alien-invasion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "game.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sasiedu/Alien-Invasion.git"
+  },
+  "author": "Stephen Asiedu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sasiedu/Alien-Invasion/issues"
+  },
+  "homepage": "https://github.com/sasiedu/Alien-Invasion#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
